@@ -11,27 +11,27 @@ public class AudioManager : MonoBehaviour
 {
 	public int poolSize = 20;
 
-	private static T instance;
-	public static T i 
+	private static AudioManager instance;
+	public static AudioManager i 
 		{ get { return GetInstance(); } }
 
 	List<AudioPlayer> audioObjects = new List<AudioPlayer>();
 	
 	// look for the instance
-	static private T GetInstance()
+	static private AudioManager GetInstance()
 	{
 		if(instance != null)
 			return instance;
 		
-		T[] instances = FindObjectsOfType<T>();
+		AudioManager[] instances = FindObjectsOfType<AudioManager>();
 		if(instances.Length > 1)
 		{
-			Debug.LogWarning("More than one " + typeof(T) + " is in the scene!");					
+			Debug.LogWarning("More than one " + typeof(AudioManager) + " is in the scene!");					
 			return null;
 		}
 		else if(instances.Length == 0)
 		{
-			Debug.LogWarning("There is no " + typeof(T) + " in this scene!");				
+			Debug.LogWarning("There is no " + typeof(AudioManager) + " in this scene!");				
 			return null;
 		}
 				
@@ -46,8 +46,6 @@ public class AudioManager : MonoBehaviour
 			AudioPlayer player = CreateAudioPlayer("AudioPlayer " + (i+1));
 			audioObjects.Add(player);
 		}
-
-		Object.DontDestroyOnLoad(gameObject);
 	}
 	
 	AudioPlayer CreateAudioPlayer(string playerName)
