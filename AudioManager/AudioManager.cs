@@ -16,7 +16,7 @@ public class AudioManager : MonoBehaviour
 
 	List<AudioPlayer> audioObjects = new List<AudioPlayer>();
 	
-	// look for the instance
+	// Looks for the instance in the scene
 	static private AudioManager GetInstance()
 	{
 		if(instance != null)
@@ -59,7 +59,7 @@ public class AudioManager : MonoBehaviour
 		return player;
 	}
 	
-	// Play 2D clip
+	// Plays a 2D clip
 	public AudioPlayer PlayClip(AudioClip clip, float volume, float pitch)
 	{
 		AudioPlayer player = NextAvailableAudioPlayer();
@@ -90,7 +90,7 @@ public class AudioManager : MonoBehaviour
 		return PlayClip(clip, volume, pitch);
 	}
 
-	// Plays clip in 3D space at position
+	// Plays a clip in 3D space at position
 	public AudioPlayer PlayClipAtPosition(AudioClip clip, Vector3 position, float volume, float pitch)
 	{
 		AudioPlayer player = NextAvailableAudioPlayer();
