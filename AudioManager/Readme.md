@@ -6,8 +6,9 @@ AudioManager creates a pool of AudioPlayers (each with their own AudioSource) fo
 
 ### Usage
 
-1. Add the AudioManager script to a GameObject in your scene.
-2. When you want to play a clip in 2D space or 3D space call one of these functions: 
+1. Drop AudioManager.cs and AudioPlayer.cs into your Assets/Scripts/ folder.
+2. Add the AudioManager script to a GameObject in your scene.
+3. When you want to play a clip in 2D space or 3D space call one of these functions: 
 
 ```
 AudioManager.i.PlayClip(AudioClip clip, float volume, float pitch)
