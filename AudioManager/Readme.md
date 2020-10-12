@@ -1,4 +1,4 @@
-## AudioManager & AudioPlayer
+## AudioManager
 
 ### Overview
 
@@ -6,9 +6,10 @@ AudioManager creates a pool of AudioPlayers (each with their own AudioSource) fo
 
 ### Usage
 
-Add the AudioManager script to a GameObject in the scene and refer to it when you'd like to play some audio. 
+1. Add the AudioManager script to a GameObject in your scene.
+2. When you want to play a clip in 2D space or 3D space call one of these functions: 
 
 ```
-AudioManager.i.PlayClip(clip, volume, pitch)
-AudioManager.i.PlayClipAtPosition(clip, position, volume, pitch)
+AudioManager.i.PlayClip(AudioClip clip, float volume, float pitch)
+AudioManager.i.PlayClipAtPosition(AudioClip clip, Vector3 position, float volume, float pitch)
 ```
