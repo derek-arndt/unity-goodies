@@ -11,5 +11,8 @@ AudioManager creates a pool of AudioPlayers (each with their own AudioSource) fo
 
 ```
 AudioManager.i.PlayClip(AudioClip clip, float volume, float pitch)
+AudioManager.i.PlayClip(AudioClip[] clip, float volume, float pitch)
+
 AudioManager.i.PlayClipAtPosition(AudioClip clip, Vector3 position, float volume, float pitch)
+AudioManager.i.PlayClipAtPosition(AudioClip[] clip, Vector3 position, float volume, float pitch)
 ```
