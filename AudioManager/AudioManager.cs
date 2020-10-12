@@ -67,7 +67,7 @@ public class AudioManager : MonoBehaviour
 		if(player == null)
 			return null;
 
-		AudioSource audioSource = player.GetComponent<AudioSource>();
+		AudioSource audioSource = player.AudioSource;
 			
 		player.enabled = true;
 		player.pitchShift = false;
