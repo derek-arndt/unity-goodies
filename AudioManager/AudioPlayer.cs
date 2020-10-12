@@ -1,10 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class AudioPlayer : MonoBehaviour {
-
-	public bool pitchShift = false;
-	
+public class AudioPlayer : MonoBehaviour 
+{	
 	AudioSource audioSource;
 	public AudioSource AudioSource
 		{ get { return audioSource; } }
@@ -33,9 +31,6 @@ public class AudioPlayer : MonoBehaviour {
 	
 	void Update() 
 	{
-		if(pitchShift == true)
-			audioSource.pitch = Time.timeScale;
-		
 		// disable ourselves when the clip is finished
 		if(audioSource.isPlaying == false)
 			enabled = false;

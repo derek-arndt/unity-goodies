@@ -6,7 +6,6 @@ using UnityEngine.Audio;
 // AudioManager
 // Creates a pool of AudioPlayers for us in playing clips in 2D and 3D space
 
-// DSA does this work across scenes?
 public class AudioManager : MonoBehaviour
 {
 	public int poolSize = 20;
@@ -89,31 +88,6 @@ public class AudioManager : MonoBehaviour
 	{
 		AudioClip clip = clips[Random.Range(0, clips.Length)];
 		return PlayClip(clip, volume, pitch);
-	}
-
-	// Play a 2D clip and adjust the pitch with Time.timeScale
-	public AudioPlayer PlayClipPitchAdjusted(AudioClip clip, Vector3 position, float volume)
-	{
-		AudioPlayer player = NextAvailableAudioPlayer();
-
-		if(player == null)
-			return null;
-
-		AudioSource audioSource = player.AudioSource;
-		
-		player.enabled = true;	
-		player.pitchShift = true;
-		audioSource.spatialBlend = 1f;
-		audioSource.loop = false;
-		
-		audioSource.clip = clip;
-		player.transform.position = position;
-		audioSource.volume = volume;
-		audioSource.pitch = 1f;
-		
-		audioSource.Play();
-		
-		return player;
 	}
 
 	// Plays clip in 3D space at position
