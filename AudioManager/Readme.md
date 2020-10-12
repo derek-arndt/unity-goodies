@@ -16,3 +16,5 @@ AudioManager.i.PlayClip(AudioClip[] clip, float volume, float pitch)
 AudioManager.i.PlayClipAtPosition(AudioClip clip, Vector3 position, float volume, float pitch)
 AudioManager.i.PlayClipAtPosition(AudioClip[] clip, Vector3 position, float volume, float pitch)
 ```
+
+These functions return an AudioPlayer which contain the full AudioSource if you want more control and options. 

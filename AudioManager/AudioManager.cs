@@ -58,6 +58,21 @@ public class AudioManager : MonoBehaviour
 		
 		return player;
 	}
+
+	AudioPlayer NextAvailableAudioPlayer()
+	{
+		for(int i=0; i < poolSize; i++)
+		{
+			if(audioObjects[i].enabled == false)
+				return audioObjects[i];
+		}
+		
+		Debug.Log("No available AudioClip objects!");
+		
+		// Creating GameObjects during gameplay is expensive
+		// If emergency audio players are created either increase the pool size or ignore the audio
+		return CreateAudioPlayer("AudioPlayer (Emergency)");
+	}
 	
 	// Plays a 2D clip
 	public AudioPlayer PlayClip(AudioClip clip, float volume, float pitch)
@@ -120,20 +135,5 @@ public class AudioManager : MonoBehaviour
 	{
 		AudioClip clip = clips[Random.Range(0, clips.Length)];
 		return PlayClipAtPosition(clip, position, volume, pitch);
-	}
-
-	AudioPlayer NextAvailableAudioPlayer()
-	{
-		for(int i=0; i < poolSize; i++)
-		{
-			if(audioObjects[i].enabled == false)
-				return audioObjects[i];
-		}
-		
-		Debug.Log("No available AudioClip objects!");
-		
-		// Creating GameObjects during gameplay is expensive
-		// If emergency audio players are created either increase the pool size or ignore the audio
-		return CreateAudioPlayer("AudioPlayer (Emergency)");
 	}
 }
