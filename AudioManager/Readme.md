@@ -11,14 +11,12 @@ AudioManager creates a pool of AudioPlayers (each with their own AudioSource) fo
 3. When you want to play a clip call one of these functions: 
 
 ```csharp
-// 2D clip
+// Play a clip in 2D (and a version to randomize the clip selection from an array)
 AudioManager.i.PlayClip(AudioClip clip, float volume, float pitch)
-// 2D clip randomly selected from array
 AudioManager.i.PlayClip(AudioClip[] clip, float volume, float pitch)
 
-// 3D clip
+// Play a clip in 3D (and a version to randomize the clip selection from an array)
 AudioManager.i.PlayClipAtPosition(AudioClip clip, Vector3 position, float volume, float pitch)
-// 3D clip randomly selected from array
 AudioManager.i.PlayClipAtPosition(AudioClip[] clip, Vector3 position, float volume, float pitch)
 ```
 
